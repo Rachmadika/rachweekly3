@@ -23,4 +23,11 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    public function test_the_welcome_page_returns_a_successful_response(): void
+    {
+        $response = $this->get('/welcome');
+
+        $response->assertStatus(200);
+    }
 }

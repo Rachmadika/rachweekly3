@@ -15,8 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 Route::get('/profil', function () {
     return view('Profil');
-});
+})->name('profil');
+
+Route::get('/welcome', function () {
+    return view('welcome');
+})->name('welcome');
