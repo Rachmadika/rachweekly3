@@ -21,15 +21,15 @@ Route::get('/profile', function () {
 
 Route::get('/berita', function () {
     return view('berita', [
-        "title" => "Berita",
-        "beritas" => Berita::ambilberita()
+        'title' => 'Berita',
+        'berita' => Berita::latest()->get()
     ]);
 });
 
 Route::get('/berita/{slug}', function ($slug) {
     return view('beritatunggal', [
-        "title" => Berita::getTitle($slug),
-        "berita" => Berita::getBerita($slug)
+        'title' => 'Detail Berita',
+        'berita' => Berita::where('slug', $slug)->firstOrFail()
     ]);
 });
 
